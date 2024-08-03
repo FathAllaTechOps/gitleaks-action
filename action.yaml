@@ -1,6 +1,9 @@
 name: "Gitleaks Action"
 description: "A GitHub composite action to install and run Gitleaks"
-author: 'fathalla.ebrahem22@gmail.com'
+author: FathAlla Ebrahem
+branding:
+  icon: aperture
+  color: purple
 inputs:
   source:
     description: "The source directory to scan for leaks"
@@ -57,6 +60,3 @@ runs:
         path: ${{ inputs.report-output-path }}
         retention-days: 2
 
-branding:
-  icon: aperture
-  color: purple
