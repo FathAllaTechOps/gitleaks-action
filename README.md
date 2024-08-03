@@ -1,5 +1,9 @@
 # Gitleaks Action
 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/FathAllaTechOps/gitleaks-action)
+![GitHub](https://img.shields.io/github/license/FathAllaTechOps/gitleaks-action)
+
+
 ## Description
 
 This GitHub composite action installs and runs Gitleaks to scan for leaks in your source code and generates a report.
@@ -22,7 +26,7 @@ name: Run Gitleaks
 on: [push, pull_request]
 jobs:
   gitleaks:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
