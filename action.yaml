@@ -1,0 +1,58 @@
+name: "Gitleaks Action"
+description: "A GitHub composite action to install and run Gitleaks"
+author: 'fathalla.ebrahem22@gmail.com'
+inputs:
+  source:
+    description: "The source directory to scan for leaks"
+    required: false
+    default: "."
+  report-output-path:
+    description: "Path to Gitleaks report file"
+    required: false
+    default: "gitleaks-report.html"
+runs:
+  using: "composite"
+  steps:
+    - name: Install Gitleaks
+      shell: bash
+      run: |
+        wget https://github.com/gitleaks/gitleaks/releases/download/v8.18.4/gitleaks_8.18.4_linux_x64.tar.gz
+        tar -zxvf gitleaks_8.18.4_linux_x64.tar.gz
+        sudo mv gitleaks /usr/local/bin/
+
+    - name: Run Gitleaks
+      id: gitleaks
+      shell: bash
+      run: |
+        gitleaks detect --source ${{ inputs.source }} --verbose --report-path gitleaks-report.json
+      continue-on-error: true
+
+    - name: Check Report
+      id: check_report
+      shell: bash
+      run: |
+        if [[ -f gitleaks-report.json && $(cat gitleaks-report.json) == "[]" ]]; then
+          echo "No leaks found."
+          echo "leaks_found=false" >> $GITHUB_ENV
+        else
+          echo "Leaks found."
+          echo "leaks_found=true" >> $GITHUB_ENV
+        fi
+
+    - name: Convert report to HTML
+      if: env.leaks_found == 'true'
+      shell: bash
+      run: python3 ${{ github.action_path }}/gitleak.py
+
+    - name: Rename report
+      if: env.leaks_found == 'true'
+      shell: bash
+      run: mv gitleaks-report.html ${{ inputs.report-output-path }}
+
+    - name: Upload report
+      if: env.leaks_found == 'true'
+      uses: actions/upload-artifact@v4
+      with:
+        name: report-${{ inputs.source }}
+        path: ${{ inputs.report-output-path }}
+        retention-days: 2
