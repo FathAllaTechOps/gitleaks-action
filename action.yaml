@@ -56,3 +56,7 @@ runs:
         name: report-${{ inputs.source }}
         path: ${{ inputs.report-output-path }}
         retention-days: 2
+
+branding:
+  icon: aperture
+  color: purple
