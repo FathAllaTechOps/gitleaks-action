@@ -2,9 +2,10 @@
 
 # Run [GitLeaks][gitleaks] action
 
-![Release version][badge_release_version]
-[![Build Status][badge_build]][link_build]
-[![License][badge_license]][link_license]
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/yourusername/gitleaks-action)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/yourusername/gitleaks-action/ci.yml)
+![GitHub](https://img.shields.io/github/license/yourusername/gitleaks-action)
+
 
 ## Description
 
