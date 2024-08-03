@@ -2,9 +2,9 @@
 
 # Run [GitLeaks][gitleaks] action
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/yourusername/gitleaks-action)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/yourusername/gitleaks-action/ci.yml)
-![GitHub](https://img.shields.io/github/license/yourusername/gitleaks-action)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/FathAllaTechOps/gitleaks-action)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/FathAllaTechOps/gitleaks-action/ci.yml)
+![GitHub](https://img.shields.io/github/license/FathAllaTechOps/gitleaks-action)
 
 
 ## Description
