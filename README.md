@@ -1,5 +1,11 @@
 # Gitleaks Action
 
+# Run [GitLeaks][gitleaks] action
+
+![Release version][badge_release_version]
+[![Build Status][badge_build]][link_build]
+[![License][badge_license]][link_license]
+
 ## Description
 
 This GitHub composite action installs and runs Gitleaks to scan for leaks in your source code and generates a report.
