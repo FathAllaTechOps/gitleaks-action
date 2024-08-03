@@ -3,7 +3,6 @@
 # Run [GitLeaks][gitleaks] action
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/FathAllaTechOps/gitleaks-action)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/FathAllaTechOps/gitleaks-action/ci.yml)
 ![GitHub](https://img.shields.io/github/license/FathAllaTechOps/gitleaks-action)
 
 
