@@ -36,8 +36,7 @@ runs:
       shell: bash
       run: |
         gitleaks detect --source ${{ inputs.source }} --verbose --report-path gitleaks-report.json
-      continue-on-error: ${{ !inputs.fail-on-error }}
-
+      continue-on-error: ${{ inputs.fail-on-error == 'false' }} 
     - name: Check Report
       id: check_report
       shell: bash
