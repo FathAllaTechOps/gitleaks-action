@@ -5,8 +5,12 @@ import os
 with open('./gitleaks-report.json') as f:
     data = json.load(f)
 
-# Get HTML file name from environment variable, default to 'gitleaks-report.html' if not set
+# Get HTML file name and output path from environment variables
 html_file_name = os.getenv('HTML_File_Name', 'gitleaks-report.html')
+output_path = os.getenv('OUTPUT_PATH', './report')
+
+# Create full output file path
+output_file = os.path.join(output_path, html_file_name)
 
 # Create the HTML table with enhanced CSS
 html = """
@@ -102,8 +106,8 @@ html += """
 </html>
 """
 
-# Save the HTML to a file
-with open(html_file_name, 'w') as f:
+# Save the HTML to a file in the specified output path
+with open(output_file, 'w') as f:
     f.write(html)
 
-print(f"HTML file '{html_file_name}' created successfully.")
+print(f"HTML file saved successfully at: {output_file}")

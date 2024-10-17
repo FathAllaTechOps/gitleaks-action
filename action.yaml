@@ -9,8 +9,12 @@ inputs:
     description: "The source directory to scan for leaks"
     required: false
     default: "."
-  report-output-path:
+  output-path:
     description: "Path to Gitleaks report file"
+    required: false
+    default: "./report"
+  report-name:
+    description: "Name of the report file"
     required: false
     default: "gitleaks-report.html"
 runs:
@@ -46,14 +50,16 @@ runs:
       if: env.leaks_found == 'true'
       shell: bash
       run: |
-        HTML_File_Name=${{ inputs.report-output-path }}
+        HTML_File_Name=${{ inputs.report-name }}
+        OUTPUT_PATH=${{ inputs.output-path }}
+        mkdir -p $OUTPUT_PATH
         python3 ${{ github.action_path }}/gitleak.py
 
     - name: Upload report
       if: env.leaks_found == 'true'
       uses: actions/upload-artifact@v4
       with:
-        name: report-${{ inputs.source }}
-        path: ${{ inputs.report-output-path }}
+        name: ${{ inputs.report-output-path }}
+        path: $OUTPUT_PATH/${{ inputs.report-output-path }}
         retention-days: 2
 
