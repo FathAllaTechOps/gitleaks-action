@@ -1,4 +1,4 @@
-name: "Gitleaks Action"
+name: "Gitleaks Scan Action"
 description: "A GitHub composite action to install and run Gitleaks"
 author: FathAlla Ebrahem
 branding:
