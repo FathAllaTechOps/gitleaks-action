@@ -14,10 +14,12 @@ This GitHub composite action installs and runs Gitleaks to scan for leaks in you
 
 ## Inputs
 
-| Input Name       | Description                           | Required | Default                   |
-|------------------|---------------------------------------|----------|---------------------------|
-| `source`         | The source directory to scan for leaks| false    | `.`                       |
-| `report-output-path` | Path to Gitleaks report file      | false    | `gitleaks-report.html`    |
+| Input Name        | Description                                   | Required | Default                   |
+|-------------------|-----------------------------------------------|----------|---------------------------|
+| `source`          | The source directory to scan for leaks        | false    | `.`                       |
+| `fail-on-error`   | Fail the action if leaks are found            | false    | `false`                   |
+| `output-path`     | Path to Gitleaks report file                  | false    | `./report`                |
+| `report-name`     | Name of the report file                       | false    | `gitleaks-report.html`    |
 
 ## Usage
 
@@ -40,4 +42,5 @@ jobs:
         with:
           source: <Repository_Name>
           report-output-path: <Repository_Name>_report.html
+          fail-on-error: false
 ```
