@@ -1,6 +1,6 @@
 # Gitleaks Action
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/FathAllaTechOps/gitleaks-action)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/FathAllaTechOps/gitleaks-action?label=Latest%20Release)
 ![GitHub](https://img.shields.io/github/license/FathAllaTechOps/gitleaks-action)
 
 
@@ -31,12 +31,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          repository: VFGroup-VBIT/<Repository_Name>
+          repository: <Owner_Name>/<Repository_Name>
           path: <Repository_Name>
           token: ${{ secrets.TOKEN }}
 
       - name: Run Gitleaks
-        uses: FathAllaTechOps/gitleaks-action@main
+        uses: FathAllaTechOps/gitleaks-action@v1.2.0
         with:
           source: <Repository_Name>
           report-output-path: <Repository_Name>_report.html
