@@ -36,7 +36,7 @@ jobs:
           token: ${{ secrets.TOKEN }}
 
       - name: Run Gitleaks
-        uses: FathAllaTechOps/gitleaks-action@main
+        uses: FathAllaTechOps/gitleaks-action@v1.2.0
         with:
           source: <Repository_Name>
           report-output-path: <Repository_Name>_report.html
