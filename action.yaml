@@ -49,11 +49,6 @@ runs:
         HTML_File_Name=${{ inputs.report-output-path }}
         python3 ${{ github.action_path }}/gitleak.py
 
-    - name: Rename report
-      if: env.leaks_found == 'true'
-      shell: bash
-      run: mv gitleaks-report.html ${{ inputs.report-output-path }}
-
     - name: Upload report
       if: env.leaks_found == 'true'
       uses: actions/upload-artifact@v4
