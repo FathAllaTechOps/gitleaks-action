@@ -60,6 +60,6 @@ runs:
       uses: actions/upload-artifact@v4
       with:
         name: ${{ inputs.report-output-path }}
-        path: $OUTPUT_PATH/${{ inputs.report-output-path }}
+        path: ${{ inputs.output-path }}/${{ inputs.report-output-path }}
         retention-days: 2
 
