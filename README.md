@@ -31,7 +31,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          repository: VFGroup-VBIT/<Repository_Name>
+          repository: <Owner_Name>/<Repository_Name>
           path: <Repository_Name>
           token: ${{ secrets.TOKEN }}
 
