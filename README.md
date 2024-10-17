@@ -1,6 +1,6 @@
 # Gitleaks Action
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/FathAllaTechOps/gitleaks-action)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/FathAllaTechOps/gitleaks-action?label=Latest%20Release)
 ![GitHub](https://img.shields.io/github/license/FathAllaTechOps/gitleaks-action)
 
 
