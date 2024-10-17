@@ -9,6 +9,10 @@ inputs:
     description: "The source directory to scan for leaks"
     required: false
     default: "."
+  fail-on-error:
+    description: "Fail the action if leaks are found"
+    required: false
+    default: "false"
   output-path:
     description: "Path to Gitleaks report file"
     required: false
@@ -32,7 +36,7 @@ runs:
       shell: bash
       run: |
         gitleaks detect --source ${{ inputs.source }} --verbose --report-path gitleaks-report.json
-      continue-on-error: true
+      continue-on-error: ${{ !inputs.fail-on-error }}
 
     - name: Check Report
       id: check_report
