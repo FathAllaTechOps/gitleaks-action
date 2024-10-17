@@ -45,7 +45,9 @@ runs:
     - name: Convert report to HTML
       if: env.leaks_found == 'true'
       shell: bash
-      run: python3 ${{ github.action_path }}/gitleak.py
+      run: |
+        HTML_File_Name=${{ inputs.report-output-path }}
+        python3 ${{ github.action_path }}/gitleak.py
 
     - name: Rename report
       if: env.leaks_found == 'true'
