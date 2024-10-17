@@ -59,7 +59,7 @@ runs:
       if: env.leaks_found == 'true'
       uses: actions/upload-artifact@v4
       with:
-        name: ${{ inputs.report-output-path }}
-        path: ${{ inputs.output-path }}/${{ inputs.report-output-path }}
+        name: ${{ inputs.report-name }}
+        path: ${{ inputs.output-path }}/${{ inputs.report-name }}
         retention-days: 2
 
