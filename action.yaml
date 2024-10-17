@@ -53,8 +53,8 @@ runs:
       if: env.leaks_found == 'true'
       shell: bash
       run: |
-        HTML_File_Name=${{ inputs.report-name }}
-        OUTPUT_PATH=${{ inputs.output-path }}
+        export HTML_File_Name=${{ inputs.report-name }}
+        export OUTPUT_PATH=${{ inputs.output-path }}
         mkdir -p $OUTPUT_PATH
         python3 ${{ github.action_path }}/gitleak.py
 
